@@ -3,8 +3,15 @@ import { ActionTypes } from '../actions/postActions';
 import { fetchPosts as apiFetchPosts } from '../../api';
 
 interface Post {
-  // Your Post type definition
+  id: number; 
+  title: string;
+  content: string;
+  author_id: number; 
+  thumbnailUrl?: string; 
+  createdAt: string; 
+  updatedAt: string; 
 }
+
 
 function* fetchPostsSaga(): Generator<any, void, Post[]> {
   try {
