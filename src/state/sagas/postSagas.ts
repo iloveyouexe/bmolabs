@@ -13,7 +13,7 @@ interface Post {
 }
 
 
-function* fetchPostsSaga(): Generator<any, void, Post[]> {
+export function* fetchPostsSaga(): Generator<any, void, Post[]> {
   try {
     const posts: Post[] = yield call(apiFetchPosts);
     yield put({ type: ActionTypes.FETCH_POSTS_SUCCESS, payload: posts });
