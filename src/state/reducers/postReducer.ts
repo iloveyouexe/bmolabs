@@ -17,7 +17,6 @@ export const postReducer = (state: PostsState = initialState, action: PostAction
     case ActionTypes.ADD_POST:
       const addPostAction = action as AddPostAction;
       return { ...state, posts: [...state.posts, addPostAction.payload] };
-    // ... other cases
     default:
       return state;
   }
