@@ -1,7 +1,7 @@
 import { runSaga } from 'redux-saga';
-import { fetchPostsSaga } from '../../../state/sagas/postSagas';
-import * as api from '../../../api'; 
-import { ActionTypes } from '../../../state/actions/postActions';
+import { fetchPostsSaga } from '../postSagas';
+import * as api from '../../../utils/api'; 
+import { ActionTypes } from '../../actions/postActions'
 
 // Mock API
 jest.mock('../../../api', () => ({

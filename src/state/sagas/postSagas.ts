@@ -1,17 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { ActionTypes } from '../actions/postActions';
-import { fetchPosts as apiFetchPosts } from '../../api';
-
-interface Post {
-  id: number; 
-  title: string;
-  content: string;
-  author_id: number; 
-  thumbnailUrl?: string; 
-  createdAt: string; 
-  updatedAt: string; 
-}
-
+import { fetchPosts as apiFetchPosts } from '../../utils/api';
+import { ActionTypes } from '../actions/postActions'
+import { Post } from '../../types/models';
 
 export function* fetchPostsSaga(): Generator<any, void, Post[]> {
   try {

@@ -5,4 +5,3 @@ export const fetchPosts = async () => {
     }
     return response.json();
   };
-  

@@ -8,14 +8,12 @@ const sagaMiddleware = createSagaMiddleware();
 export const store = configureStore({
   reducer: {
     posts: postReducer,
-    // other reducers...
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware as any),
+  middleware: (getDefaultMiddleware) => 
+    getDefaultMiddleware().concat(sagaMiddleware),
 });
 
-// then run the saga
 sagaMiddleware.run(watchFetchPosts);
 
-// Export RootState and AppDispatch types from the store
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
