@@ -8,3 +8,18 @@ export interface Post {
     updatedAt: string; 
   }
 
+  export interface Authors {
+    id: number;
+    user_id: number;
+    bio: string;
+    profile_picture_url: string;
+    name: string;
+  }
+
+  export interface Comments {
+    id: number;
+    post_id: number;
+    user_id: number;
+    content: string;
+    created_at: string;
+  }

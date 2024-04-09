@@ -1,10 +1,10 @@
 import { runSaga } from 'redux-saga';
 import { fetchPostsSaga } from '../postSagas';
-import * as api from '../../../utils/api'; 
 import { ActionTypes } from '../../actions/postActions'
+import * as api from '../../../utils/api'
 
 // Mock API
-jest.mock('../../../api', () => ({
+jest.mock('../../../utils/api', () => ({
     fetchPosts: jest.fn(() => Promise.resolve([{ id: 1, title: 'Test Post' }])),
   }));
   
