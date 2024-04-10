@@ -4,7 +4,7 @@ import { fetchPosts as apiFetchPosts } from '../../utils/api';
 import { updatePost as apiUpdatePost } from '../../utils/api';
 import { deletePost as apiDeletePost } from '../../utils/api';
 import { ActionTypes, AddPostRequestAction, DeletePostRequestAction, UpdatePostRequestAction } from '../actions/postActions'; 
-import { Post } from '../../types/models';
+import { Post } from '../types/models';
 
 export function* fetchPostsSaga(): Generator<any, void, Post[]> {
   try {

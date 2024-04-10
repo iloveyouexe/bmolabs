@@ -1,23 +1,22 @@
 import React from 'react';
-
-interface BlogPost {
-  title: string;
-  content: string;
-  author: string;
-  date: string;
-}
+import { Post } from "../../state/types/models"
 
 interface Props {
-  post: BlogPost;
+  post: Post;
 }
 
-const BlogPost: React.FC<Props> = ({ post }) => {
+const BlogPost = ({ post }: Props) => {
   return (
     <div>
       <h2>{post.title}</h2>
       <p>{post.content}</p>
-      <div>Author: {post.author}</div>
-      <div>Date: {post.date}</div>
+      {post.author && (
+        <div>
+          <div>Author: {post.author.name}</div>
+          <img src={post.author.profile_picture_url} alt={post.author.name} />
+        </div>
+      )}
+      <div>Date: {new Date(post.createdAt).toLocaleDateString()}</div>
     </div>
   );
 };

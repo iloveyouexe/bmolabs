@@ -1,5 +1,5 @@
 import { PostActions, ActionTypes, FetchPostsSuccessAction, FetchPostsFailureAction, AddPostFailureAction, AddPostSuccessAction } from '../actions/postActions';
-import { Post } from '../../types/models';
+import { Post } from '../types/models';
 
 interface PostsState {
   posts: Post[];

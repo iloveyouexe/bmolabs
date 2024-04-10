@@ -10,7 +10,7 @@ interface Props {
   posts: Blog[];
 }
 
-const BlogList: React.FC<Props> = ({ posts }) => {
+const BlogList = ({ posts }: Props) => {
   return (
     <div>
       <h2>Latest Blog Posts</h2>

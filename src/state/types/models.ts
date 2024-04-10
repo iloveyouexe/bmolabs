@@ -1,4 +1,5 @@
 export interface Post {
+    author: Author;
     id: number; 
     title: string;
     content: string;
@@ -8,7 +9,7 @@ export interface Post {
     updatedAt: string; 
   }
 
-  export interface Authors {
+  export interface Author {
     id: number;
     user_id: number;
     bio: string;

@@ -1,4 +1,4 @@
-import { Post } from "../types/models";
+import { Post } from "../state/types/models";
 
 export const fetchPosts = async (): Promise<Post[]> => {
   const response = await fetch('/api/posts');

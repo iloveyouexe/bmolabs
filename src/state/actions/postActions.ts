@@ -1,4 +1,4 @@
-import { Post } from '../../types/models';
+import { Post } from '../types/models';
 
 export const ActionTypes = {
   ADD_POST_REQUEST: 'ADD_POST_REQUEST',

@@ -1,29 +1,27 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Post, Author } from "../../state/types/models";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  content: string;
-  // Other fields
+interface SingleBlogPostProps {
+  posts: Post[]; 
 }
 
-const SingleBlogPost: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
+const SingleBlogPost = ({ posts }: SingleBlogPostProps) => {
   const { id } = useParams<{ id: string }>();
-
-  // Find the post with the matching ID
-  const post = posts.find(post => post.id === id);
-
-  // If post not found, return a message or handle accordingly
+  const post = posts.find((p) => p.id === Number(id));
+  
   if (!post) {
-    return <div>Post not found</div>;
+    return <div>try again bucko</div>;
   }
+
+  const formattedDate = post.createdAt ? new Date(post.createdAt).toLocaleDateString() : "...seems like something broke (ohwell)";
 
   return (
     <div>
-      <h1>{post.title}</h1>
+      <h2>{post.title}</h2>
       <p>{post.content}</p>
-      {/* Render other details of the post */}
+      <div>Author: {post.author ? post.author.name : 'Anonymous'}</div>
+      <div>Date: {formattedDate}</div>
     </div>
   );
 };
